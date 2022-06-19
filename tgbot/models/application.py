@@ -1,11 +1,13 @@
-from sqlalchemy import Column, BigInteger, String, Integer
+from sqlalchemy import Column, BigInteger, String, Integer, func, DateTime
 
-from tgbot.models import BaseModel
+from tgbot.models import Base
 
 
-class Application(BaseModel):
+class Application(Base):
     __tablename__ = 'registration_application'
 
+    created_at = Column(DateTime(True), server_default=func.now(), nullable=True)
+    updated_at = Column(DateTime(True), default=func.now(), onupdate=func.now(), server_default=func.now(), nullable=True)
     id = Column(BigInteger, nullable=False, autoincrement=True, primary_key=True)
     name = Column(String(length=50), nullable=False)
     surname = Column(String(length=100), nullable=False)

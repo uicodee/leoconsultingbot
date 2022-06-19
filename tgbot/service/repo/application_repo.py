@@ -1,3 +1,5 @@
+import datetime
+
 from sqlalchemy import insert
 
 from tgbot.models import Application
@@ -9,6 +11,8 @@ class ApplicationRepo(BaseSQLAlchemyRepo):
 
     async def new_application(self, name: str, surname: str, age: int, email: str, region: str, phone_number: str):
         sql = insert(self.model).values(
+            created_at=datetime.datetime.now(),
+            updated_at=datetime.datetime.now(),
             name=name,
             surname=surname,
             age=age,
