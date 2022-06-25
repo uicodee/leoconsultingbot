@@ -7,5 +7,5 @@ __ = i18n.lazy_gettext
 languages = {
     "ru": "🇷🇺 Русский",
     "uz": "🇺🇿 O'zbek",
-    "en": "🇺🇸 English",
+    "en": "🇺🇸 English"
 }
