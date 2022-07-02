@@ -18,7 +18,8 @@ class ApplicationRepo(BaseSQLAlchemyRepo):
             age=age,
             email=email,
             region=region,
-            phone_number=phone_number
+            phone_number=phone_number,
+            status='new'
         )
         await self._session.execute(sql)
         await self._session.commit()
