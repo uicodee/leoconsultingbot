@@ -6,7 +6,6 @@ from tgbot.keyboards.default.main_keyboard import main_markup
 from tgbot.keyboards.inline.language_keyboard import language_markup
 from tgbot.service.repo.repository import SQLAlchemyRepos
 from tgbot.service.repo.user_repo import UserRepo
-from tgbot.states.states import RegisterForm
 
 
 async def user_start(message: types.Message, repo: SQLAlchemyRepos, state: FSMContext):
@@ -22,4 +21,3 @@ async def user_start(message: types.Message, repo: SQLAlchemyRepos, state: FSMCo
             text=_('Главное меню'),
             reply_markup=main_markup()
         )
-        await RegisterForm.name.set()

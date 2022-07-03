@@ -5,7 +5,7 @@ from tgbot.data.data import _
 from tgbot.states.states import RegisterForm
 
 
-async def register(message: types.Message, state: FSMContext) -> None:
+async def register_btn(message: types.Message, state: FSMContext) -> None:
     await state.reset_state(with_data=True)
     await message.answer(
         text=_('<b>Здравствуйте!</b>\n\n'
@@ -17,4 +17,3 @@ async def register(message: types.Message, state: FSMContext) -> None:
             ]
         )
     )
-    await RegisterForm.name.set()
