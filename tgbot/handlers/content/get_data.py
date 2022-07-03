@@ -1,7 +1,7 @@
 from aiogram import types
 from aiogram.dispatcher import FSMContext
+
 from tgbot.data.data import _
-from tgbot.models.region import Region
 from tgbot.service.repo.region_repo import RegionRepo
 from tgbot.service.repo.repository import SQLAlchemyRepos
 from tgbot.states.states import RegisterForm
@@ -12,8 +12,7 @@ async def get_name(message: types.Message, state: FSMContext):
     if not name.isdigit():
         await state.update_data(name=name)
         await message.answer(
-            text=_('<b>Шаг 2.</b>\n\n'
-                   'Введите свою фамилию'),
+            text=_('Отлично! Теперь введите вашу фамилию'),
             reply_markup=types.InlineKeyboardMarkup(
                 row_width=1,
                 inline_keyboard=[
@@ -33,8 +32,7 @@ async def get_surname(message: types.Message, state: FSMContext):
     if not surname.isdigit():
         await state.update_data(surname=surname)
         await message.answer(
-            text=_('<b>Шаг 3.</b>\n\n'
-                   'Введите ваш возраст. Мы принимаем заявки начиная от 16 лет'),
+            text=_('Введите ваш возраст. Мы принимаем заявки начиная от 18 лет'),
             reply_markup=types.InlineKeyboardMarkup(
                 row_width=1,
                 inline_keyboard=[
@@ -49,47 +47,25 @@ async def get_surname(message: types.Message, state: FSMContext):
         )
 
 
-async def get_age(message: types.Message, state: FSMContext):
+async def get_age(message: types.Message, state: FSMContext, repo: SQLAlchemyRepos):
     age = message.text
     if age.isdigit():
-        if int(age) < 16:
+        if int(age) < 18:
             await message.answer(
-                text=_('⚠️ Мы принимаем заявки только от 16 лет')
+                text=_('⚠️ Мы принимаем заявки только от 18 лет')
             )
         else:
             await state.update_data(age=age)
+            region = repo.get_repo(RegionRepo)
+            regions = await region.get_regions()
+            keyboard = types.ReplyKeyboardMarkup(row_width=3, resize_keyboard=True, one_time_keyboard=True)
+            for r in regions:
+                keyboard.insert(types.KeyboardButton(text=r.region_name))
             await message.answer(
-                text=_('<b>Шаг 4.</b>\n\n'
-                       'Введите вашу электронную почту для ответа на вашу заявку'),
-                reply_markup=types.InlineKeyboardMarkup(
-                    row_width=1,
-                    inline_keyboard=[
-                        [types.InlineKeyboardButton(text=_('❌ Отмена'), callback_data='cancel')]
-                    ]
-                )
+                text=_('Выберите ваш регион с помощью кнопок ниже'),
+                reply_markup=keyboard,
             )
-            await RegisterForm.email.set()
-    else:
-        await message.answer(
-            text=_('⚠️ Вводите данные в правильном формате')
-        )
-
-
-async def get_email(message: types.Message, state: FSMContext, repo: SQLAlchemyRepos):
-    region = repo.get_repo(RegionRepo)
-    regions = await region.get_regions()
-    email = message.text
-    keyboard = types.ReplyKeyboardMarkup(row_width=3, resize_keyboard=True, one_time_keyboard=True)
-    if not email.isdigit():
-        for r in regions:
-            keyboard.insert(types.KeyboardButton(text=r.region_name))
-        await state.update_data(email=email)
-        await message.answer(
-            text=_('<b>Шаг 5.</b>\n\n'
-                   'Выберите ваш регион с помощью кнопок ниже'),
-            reply_markup=keyboard,
-        )
-        await RegisterForm.region.set()
+            await RegisterForm.region.set()
     else:
         await message.answer(
             text=_('⚠️ Вводите данные в правильном формате')
@@ -107,8 +83,7 @@ async def get_region(message: types.Message, repo: SQLAlchemyRepos, state: FSMCo
     else:
         await state.update_data(region=region)
         await message.answer(
-            text=_('<b>Шаг 6.</b>\n\n'
-                   'Отправьте номер телефона с помощью кнопок ниже'),
+            text=_('Отправьте номер телефона с помощью кнопок ниже'),
             reply_markup=types.ReplyKeyboardMarkup(
                 row_width=1,
                 keyboard=[[types.KeyboardButton(text=_('📞 Отправить номер телефона'), request_contact=True)]],
@@ -128,7 +103,6 @@ async def get_phone(message: types.Message, repo: SQLAlchemyRepos, state: FSMCon
                '<b>Имя:</b> {name}\n'
                '<b>Фамилия:</b> {surname}\n'
                '<b>Возраст:</b> {age}\n'
-               '<b>Email:</b> {email}\n'
                '<b>Регион:</b> {region}\n'
                '<b>Номер телефона:</b> {phone_number}').format(
             name=data.get('name'),

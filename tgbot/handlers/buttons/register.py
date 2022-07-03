@@ -1,10 +1,10 @@
 from aiogram import types
-from aiogram.dispatcher import FSMContext
+
 from tgbot.data.data import _
 from tgbot.states.states import RegisterForm
 
 
-async def register(message: types.Message, state: FSMContext):
+async def register(message: types.Message) -> None:
     await message.answer(
         text=_('<b>Здравствуйте!</b>\n\n'
                'Как вас зовут?'),

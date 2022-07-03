@@ -8,6 +8,7 @@ from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import sessionmaker
 
 from tgbot.config import load_config
+from tgbot.handlers.buttons import register_buttons
 from tgbot.handlers.commands import register_commands
 from tgbot.handlers.content import register_content
 from tgbot.handlers.query_handlers import register_query_handlers
@@ -38,6 +39,7 @@ async def main():
     dp = Dispatcher(bot, storage=storage)
     register_middlewares(dp, session_fabric)
     register_commands(dp)
+    register_buttons(dp)
     register_query_handlers(dp)
     register_content(dp)
 

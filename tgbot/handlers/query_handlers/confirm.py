@@ -1,6 +1,7 @@
 from aiogram import types
 from aiogram.dispatcher import FSMContext
 
+from tgbot.keyboards.default.main_keyboard import main_markup
 from tgbot.service.repo.application_repo import ApplicationRepo
 from tgbot.service.repo.repository import SQLAlchemyRepos
 from tgbot.data.data import _
@@ -12,9 +13,11 @@ async def confirm(query: types.CallbackQuery, state: FSMContext, repo: SQLAlchem
         name=data.get('name'),
         surname=data.get('surname'),
         age=int(data.get('age')),
-        email=data.get('email'),
         region=data.get('region'),
         phone_number=data.get('phone_number'),
     )
-    await query.answer(text=_('🥳 Ваши данные успешно сохранены и переданы на обработку!'), show_alert=True)
+    await query.message.answer(
+        text=_('🥳 Ваши данные успешно сохранены и переданы на обработку!'),
+        reply_markup=main_markup()
+    )
     await query.message.delete()

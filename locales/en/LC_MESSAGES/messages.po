@@ -7,18 +7,106 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-06-16 15:02+0500\n"
-"PO-Revision-Date: 2022-06-16 15:03+0500\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: en\n"
+"POT-Creation-Date: 2022-07-03 12:49+0500\n"
+"PO-Revision-Date: 2022-07-03 12:52+0500\n"
+"Last-Translator: \n"
 "Language-Team: en <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: Babel 2.9.1\n"
+"X-Generator: Poedit 3.0.1\n"
 
-#: tgbot/handlers/commands/start.py:12
-msgid "Здравствуйте! Выберите необходимый язык"
+#: tgbot/handlers/buttons/register.py:9 tgbot/handlers/commands/register.py:9
+msgid ""
+"<b>Здравствуйте!</b>\n"
+"\n"
+"Как вас зовут?"
 msgstr ""
+"<b>Hello!\n"
+"</b>\n"
+"What is your name?"
 
+#: tgbot/handlers/buttons/register.py:14 tgbot/handlers/commands/register.py:14
+#: tgbot/handlers/content/get_data.py:19 tgbot/handlers/content/get_data.py:39
+#: tgbot/handlers/content/get_data.py:119
+msgid "❌ Отмена"
+msgstr "❌ Cancel"
+
+#: tgbot/handlers/buttons/settings.py:9 tgbot/handlers/commands/start.py:15
+msgid "Здравствуйте! Выберите необходимый язык"
+msgstr "Hello! Select the desired language"
+
+#: tgbot/handlers/commands/start.py:20
+#: tgbot/handlers/query_handlers/language_handler.py:24
+msgid "Главное меню"
+msgstr "Main menu"
+
+#: tgbot/handlers/content/get_data.py:15
+msgid "Отлично! Теперь введите вашу фамилию"
+msgstr "Great! Now enter your last name"
+
+#: tgbot/handlers/content/get_data.py:26 tgbot/handlers/content/get_data.py:46
+#: tgbot/handlers/content/get_data.py:71
+msgid "⚠️ Вводите данные в правильном формате"
+msgstr "⚠️ Enter data in the correct format"
+
+#: tgbot/handlers/content/get_data.py:35
+msgid "Введите ваш возраст. Мы принимаем заявки начиная от 18 лет"
+msgstr "Enter your age. We accept applications from 18 years of age or older"
+
+#: tgbot/handlers/content/get_data.py:55
+msgid "⚠️ Мы принимаем заявки только от 18 лет"
+msgstr "⚠️ We only accept applications from 18 years old"
+
+#: tgbot/handlers/content/get_data.py:65
+msgid "Выберите ваш регион с помощью кнопок ниже"
+msgstr "Select your region using the buttons below"
+
+#: tgbot/handlers/content/get_data.py:81
+msgid "⚠️ Выбирайте только с помощью кнопок"
+msgstr "⚠️ Select only with the buttons"
+
+#: tgbot/handlers/content/get_data.py:86
+msgid "Отправьте номер телефона с помощью кнопок ниже"
+msgstr "Send your phone number using the buttons below"
+
+#: tgbot/handlers/content/get_data.py:89
+msgid "📞 Отправить номер телефона"
+msgstr "📞 Send phone number"
+
+#: tgbot/handlers/content/get_data.py:102
+msgid ""
+"❗️ Еще раз перепроверьте свои данные затем потдвердите ваше действие\n"
+"\n"
+"<b>Имя:</b> {name}\n"
+"<b>Фамилия:</b> {surname}\n"
+"<b>Возраст:</b> {age}\n"
+"<b>Регион:</b> {region}\n"
+"<b>Номер телефона:</b> {phone_number}"
+msgstr ""
+"❗️Recheck your data again and then confirm your action \n"
+"\n"
+"<b>First name:</b> {name}\n"
+"<b>Last name:</b> {surname}\n"
+"<b>Age:</b> {age}\n"
+"<b>Region:</b> {region}\n"
+"<b>Phone number:</b> {phone_number}"
+
+#: tgbot/handlers/content/get_data.py:118
+msgid "✅ Подтвердить"
+msgstr "✅ Confirm"
+
+#: tgbot/handlers/query_handlers/confirm.py:20
+msgid "🥳 Ваши данные успешно сохранены и переданы на обработку!"
+msgstr "🥳 Your data has been successfully saved and transferred for processing!"
+
+#: tgbot/keyboards/default/main_keyboard.py:8
+msgid "👤 Отправить заявку"
+msgstr "👤 Send a request"
+
+#: tgbot/keyboards/default/main_keyboard.py:9
+msgid "⚙️ Настройки"
+msgstr "⚙️ Settings"

@@ -20,20 +20,11 @@ async def language_handler(query: types.CallbackQuery, callback_data: dict, repo
         await user.update_language(user_id=query.from_user.id, language=language_code)
     await query.answer()
     await query.message.delete()
+    print(language_code)
     await query.message.answer(
         text=_('Главное меню', locale=language_code),
         reply_markup=main_markup(
             locale=language_code
-        )
-    )
-    await query.message.answer(
-        text=_('<b>Шаг 1.</b>\n\n'
-               'Введите свое имя'),
-        reply_markup=types.InlineKeyboardMarkup(
-            row_width=1,
-            inline_keyboard=[
-                [types.InlineKeyboardButton(text=_('❌ Отмена'), callback_data='cancel')]
-            ]
         )
     )
     await RegisterForm.name.set()
