@@ -1,6 +1,6 @@
 from tgbot.middlewares import Language
 
-i18n = Language(domain="messages", path="locales", default="uz")
+i18n = Language(domain="messages", path="tgbot/locales", default="uz")
 _ = i18n.gettext
 __ = i18n.lazy_gettext
 
