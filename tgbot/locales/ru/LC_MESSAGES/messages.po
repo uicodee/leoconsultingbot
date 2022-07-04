@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-07-03 12:49+0500\n"
-"PO-Revision-Date: 2022-06-16 15:03+0500\n"
+"POT-Creation-Date: 2022-07-04 17:42+0500\n"
+"PO-Revision-Date: 2022-07-04 17:41+0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
 "Language-Team: ru <LL@li.org>\n"
@@ -19,62 +19,64 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
 
-#: tgbot/handlers/buttons/register.py:9 tgbot/handlers/commands/register.py:9
-msgid ""
-"<b>Здравствуйте!</b>\n"
-"\n"
-"Как вас зовут?"
+#: handlers/buttons/register_btn.py:11 handlers/commands/register.py:10
+msgid "Введите имя"
 msgstr ""
 
-#: tgbot/handlers/buttons/register.py:14 tgbot/handlers/commands/register.py:14
-#: tgbot/handlers/content/get_data.py:19 tgbot/handlers/content/get_data.py:39
-#: tgbot/handlers/content/get_data.py:119
+#: handlers/buttons/register_btn.py:15 handlers/commands/register.py:14
+#: handlers/content/get_data.py:19 handlers/content/get_data.py:39
+#: handlers/content/get_data.py:119
 msgid "❌ Отмена"
 msgstr ""
 
-#: tgbot/handlers/buttons/settings.py:9 tgbot/handlers/commands/start.py:15
+#: handlers/buttons/settings.py:12
 msgid "Здравствуйте! Выберите необходимый язык"
 msgstr ""
 
-#: tgbot/handlers/commands/start.py:20
-#: tgbot/handlers/query_handlers/language_handler.py:24
-msgid "Главное меню"
+#: handlers/commands/start.py:16
+msgid ""
+"Здравствуйте. Добро пожаловать в официальный бот консалтинговой фирмы "
+"Leo! Выберите необходимый язык"
 msgstr ""
 
-#: tgbot/handlers/content/get_data.py:15
-msgid "Отлично! Теперь введите вашу фамилию"
+#: handlers/commands/start.py:21 handlers/query_handlers/language_handler.py:24
+msgid "Здравствуйте. Добро пожаловать в официальный бот консалтинговой фирмы Leo!"
 msgstr ""
 
-#: tgbot/handlers/content/get_data.py:26 tgbot/handlers/content/get_data.py:46
-#: tgbot/handlers/content/get_data.py:71
+#: handlers/content/get_data.py:15
+msgid "Введите вашу фамилию"
+msgstr ""
+
+#: handlers/content/get_data.py:26 handlers/content/get_data.py:46
+#: handlers/content/get_data.py:71
 msgid "⚠️ Вводите данные в правильном формате"
 msgstr ""
 
-#: tgbot/handlers/content/get_data.py:35
+#: handlers/content/get_data.py:35
 msgid "Введите ваш возраст. Мы принимаем заявки начиная от 18 лет"
 msgstr ""
 
-#: tgbot/handlers/content/get_data.py:55
+#: handlers/content/get_data.py:55
 msgid "⚠️ Мы принимаем заявки только от 18 лет"
 msgstr ""
 
-#: tgbot/handlers/content/get_data.py:65
+#: handlers/content/get_data.py:65
 msgid "Выберите ваш регион с помощью кнопок ниже"
 msgstr ""
 
-#: tgbot/handlers/content/get_data.py:81
+#: handlers/content/get_data.py:81
 msgid "⚠️ Выбирайте только с помощью кнопок"
 msgstr ""
 
-#: tgbot/handlers/content/get_data.py:86
+#: handlers/content/get_data.py:86
 msgid "Отправьте номер телефона с помощью кнопок ниже"
 msgstr ""
 
-#: tgbot/handlers/content/get_data.py:89
+#: handlers/content/get_data.py:89
 msgid "📞 Отправить номер телефона"
 msgstr ""
 
-#: tgbot/handlers/content/get_data.py:102
+#: handlers/content/get_data.py:102
 msgid ""
 "❗️ Еще раз перепроверьте свои данные затем потдвердите ваше действие\n"
 "\n"
@@ -85,28 +87,22 @@ msgid ""
 "<b>Номер телефона:</b> {phone_number}"
 msgstr ""
 
-#: tgbot/handlers/content/get_data.py:118
+#: handlers/content/get_data.py:118
 msgid "✅ Подтвердить"
 msgstr ""
 
-#: tgbot/handlers/query_handlers/confirm.py:20
-msgid "🥳 Ваши данные успешно сохранены и переданы на обработку!"
+#: handlers/query_handlers/confirm.py:20
+msgid "Вы успешно зарегистрировались. Ждите звонка наших специалистов!"
 msgstr ""
 
-#: tgbot/keyboards/default/main_keyboard.py:8
+#: keyboards/default/main_keyboard.py:8
 msgid "👤 Отправить заявку"
 msgstr ""
 
-#: tgbot/keyboards/default/main_keyboard.py:9
+#: keyboards/default/main_keyboard.py:9
 msgid "⚙️ Настройки"
 msgstr ""
 
-#~ msgid ""
-#~ "<b>Шаг 1.</b>\n"
-#~ "\n"
-#~ "Введите свое имя"
-#~ msgstr ""
-
-#~ msgid "👤 Ro'yxatdan o'tish"
+#~ msgid "Главное меню"
 #~ msgstr ""
 

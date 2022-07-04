@@ -7,8 +7,7 @@ from tgbot.states.states import RegisterForm
 async def register(message: types.Message, state: FSMContext):
     await state.reset_state(with_data=True)
     await message.answer(
-        text=_('<b>Здравствуйте!</b>\n\n'
-               'Как вас зовут?'),
+        text=_('Введите имя'),
         reply_markup=types.InlineKeyboardMarkup(
             row_width=1,
             inline_keyboard=[

@@ -12,7 +12,7 @@ async def get_name(message: types.Message, state: FSMContext):
     if not name.isdigit():
         await state.update_data(name=name)
         await message.answer(
-            text=_('Отлично! Теперь введите вашу фамилию'),
+            text=_('Введите вашу фамилию'),
             reply_markup=types.InlineKeyboardMarkup(
                 row_width=1,
                 inline_keyboard=[

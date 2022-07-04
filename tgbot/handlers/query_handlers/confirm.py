@@ -17,7 +17,7 @@ async def confirm(query: types.CallbackQuery, state: FSMContext, repo: SQLAlchem
         phone_number=data.get('phone_number'),
     )
     await query.message.answer(
-        text=_('🥳 Ваши данные успешно сохранены и переданы на обработку!'),
+        text=_('Вы успешно зарегистрировались. Ждите звонка наших специалистов!'),
         reply_markup=main_markup()
     )
     await query.message.delete()

@@ -13,11 +13,11 @@ async def user_start(message: types.Message, repo: SQLAlchemyRepos, state: FSMCo
     user = repo.get_repo(UserRepo)
     if await user.get_user(user_id=message.from_user.id) is None:
         await message.answer(
-            text=_('Здравствуйте! Выберите необходимый язык'),
+            text=_('Здравствуйте. Добро пожаловать в официальный бот консалтинговой фирмы Leo! Выберите необходимый язык'),
             reply_markup=language_markup()
         )
     else:
         await message.answer(
-            text=_('Главное меню'),
+            text=_('Здравствуйте. Добро пожаловать в официальный бот консалтинговой фирмы Leo!'),
             reply_markup=main_markup()
         )

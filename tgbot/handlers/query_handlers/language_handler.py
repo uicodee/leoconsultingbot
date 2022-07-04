@@ -20,9 +20,8 @@ async def language_handler(query: types.CallbackQuery, callback_data: dict, repo
         await user.update_language(user_id=query.from_user.id, language=language_code)
     await query.answer()
     await query.message.delete()
-    print(language_code)
     await query.message.answer(
-        text=_('Главное меню', locale=language_code),
+        text=_('Здравствуйте. Добро пожаловать в официальный бот консалтинговой фирмы Leo!', locale=language_code),
         reply_markup=main_markup(
             locale=language_code
         )
